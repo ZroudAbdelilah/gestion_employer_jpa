@@ -1,14 +1,14 @@
 package com.example.gestion_employer1.repository;
 
 import com.example.gestion_employer1.entity.AdminEntity;
-import com.example.gestion_employer1.hibernate.HSessionFactory;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
+//import org.hibernate.Session;
+//import org.hibernate.Transaction;
+/*
 public class AdminRepoImp implements AdminRepoInt {
     @Override
-    public boolean validate(String email, String password) {
-        Transaction transaction = null;
+   public boolean validate(String email, String password) {
+        /*Transaction transaction = null;
         AdminEntity admin = null;
         try (Session session = HSessionFactory.getInstance().getSession().openSession()) {
             // start a transaction
@@ -29,5 +29,4 @@ public class AdminRepoImp implements AdminRepoInt {
             e.printStackTrace();
         }
         return false;
-    }
-}
+    }*/

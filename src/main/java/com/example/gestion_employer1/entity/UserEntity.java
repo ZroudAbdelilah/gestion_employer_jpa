@@ -1,5 +1,5 @@
 package com.example.gestion_employer1.entity;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name ="user")

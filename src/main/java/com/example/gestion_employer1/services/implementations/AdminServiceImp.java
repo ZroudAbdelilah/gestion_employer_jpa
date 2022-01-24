@@ -1,5 +1,5 @@
 package com.example.gestion_employer1.services.implementations;
-
+/*
 import com.example.gestion_employer1.dao.implementation.AdminDaoImp;
 import com.example.gestion_employer1.dao.interfaces.AdminDao;
 import com.example.gestion_employer1.entity.AdminEntity;
@@ -31,3 +31,4 @@ public class AdminServiceImp implements AdminService {
     }
 
 }
+*/

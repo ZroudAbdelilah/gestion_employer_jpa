@@ -3,7 +3,7 @@ package com.example.gestion_employer1.dao.implementation;
 import com.example.gestion_employer1.dao.interfaces.EmployerDao;
 import com.example.gestion_employer1.entity.EmployerEntity;
 import com.example.gestion_employer1.utils.PersistenceManager;
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 import java.util.List;
 
 public class EmployerDaoImp implements EmployerDao {

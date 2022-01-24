@@ -1,5 +1,5 @@
 package com.example.gestion_employer1.servlet;
-
+/*
 import com.example.gestion_employer1.configurationThymeleaf.TemplateEngineUtil;
 import com.example.gestion_employer1.dao.implementation.EmployerDaoImp;
 import com.example.gestion_employer1.dao.implementation.RoleDaoImp;
@@ -200,3 +200,4 @@ public class ServletEmployer extends HttpServlet {
     }
 
 }
+*/

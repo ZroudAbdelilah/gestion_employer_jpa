@@ -4,9 +4,9 @@ import com.example.gestion_employer1.dao.interfaces.RoleDao;
 import com.example.gestion_employer1.entity.EmployerEntity;
 import com.example.gestion_employer1.entity.RoleEntity;
 import com.example.gestion_employer1.utils.PersistenceManager;
-import org.hibernate.Session;
+//import org.hibernate.Session;
 
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 

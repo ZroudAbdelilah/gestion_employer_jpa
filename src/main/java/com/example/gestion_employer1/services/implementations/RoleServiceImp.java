@@ -1,5 +1,5 @@
 package com.example.gestion_employer1.services.implementations;
-
+/*
 import com.example.gestion_employer1.dao.implementation.RoleDaoImp;
 import com.example.gestion_employer1.dao.interfaces.RoleDao;
 import com.example.gestion_employer1.entity.RoleEntity;
@@ -30,3 +30,4 @@ public class RoleServiceImp implements RoleService {
         return roleDao.delete(id);
     }
 }
+*/
