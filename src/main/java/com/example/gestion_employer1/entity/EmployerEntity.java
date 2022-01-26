@@ -37,7 +37,7 @@ public class EmployerEntity extends UserEntity {
 
     @Override
     public String toString() {
-        return "EmployerEntity{" +
+        return super.toString()+"EmployerEntity{" +
                 "id_user=" + id_user +
 
                 '}';

@@ -31,8 +31,7 @@ public class RoleDaoImp implements RoleDao {
     public RoleEntity find(Long id) {
         try {
             entityManager.getTransaction().begin();
-            RoleEntity roleEntity = new RoleEntity();
-            RoleEntity role = entityManager.find(RoleEntity.class, roleEntity.getId_role());
+            RoleEntity role = entityManager.find(RoleEntity.class, id);
             return role;
         }catch (Exception e){
             return null;
@@ -42,12 +41,13 @@ public class RoleDaoImp implements RoleDao {
 
     }
     @Override
-    public List<RoleEntity> getAll() {
+    public ArrayList<RoleEntity> getAll() {
         try {
             entityManager.getTransaction().begin();
-            List<RoleEntity> roleEntity = entityManager.createQuery("SELECT e FROM RoleEntity e ").getResultList() ;
+            ArrayList<RoleEntity> roleEntity = new ArrayList<>(entityManager.createQuery("SELECT e FROM RoleEntity e ").getResultList());
             return roleEntity;
         }catch (Exception e){
+            e.printStackTrace();
             return null;
         }finally {
             entityManager.close();
@@ -74,8 +74,7 @@ public class RoleDaoImp implements RoleDao {
     public boolean delete(Long id) {
         try {
             entityManager.getTransaction().begin();
-            RoleEntity roleEntity = new RoleEntity();
-            RoleEntity role = entityManager.find(RoleEntity.class, roleEntity.getId_role());
+            RoleEntity role = entityManager.find(RoleEntity.class,id);
             entityManager.remove(role);
             entityManager.getTransaction().commit();
             return true;

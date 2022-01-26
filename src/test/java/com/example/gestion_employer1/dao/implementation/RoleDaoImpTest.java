@@ -12,34 +12,35 @@ class RoleDaoImpTest {
 
     @Test
     void add() {
-        RoleDao roleDao= new RoleDaoImp() ;
-        RoleEntity roleEntity = new RoleEntity("admin");
-        assertInstanceOf(RoleEntity.class,roleDao.add(roleEntity));
+        RoleDao roleDao = new RoleDaoImp();
+        RoleEntity role = new RoleEntity("employer");
+        assertInstanceOf(RoleEntity.class,roleDao.add(role));
     }
 
     @Test
     void find() {
         RoleDao roleDao = new RoleDaoImp();
-        assertInstanceOf(RoleEntity.class,roleDao.find(new Long(4)));
+        assertInstanceOf(RoleEntity.class,roleDao.find(new Long(1)));
     }
 
     @Test
     void getAll() {
-        RoleDao roleDao = new RoleDaoImp();
         ArrayList<RoleEntity> roles = new ArrayList<RoleEntity>();
+        RoleDao roleDao = new RoleDaoImp();
         assertInstanceOf(roles.getClass(),roleDao.getAll());
     }
 
     @Test
     void update() {
-        RoleDao roleDao= new RoleDaoImp() ;
-        RoleEntity roleEntity = new RoleEntity(new Long(3),"Employer");
-        assertInstanceOf(RoleEntity.class,roleDao.update(roleEntity));
+        RoleDao roleDao = new RoleDaoImp();
+        RoleEntity role = new RoleEntity(new Long(1),"employerUP");
+        assertInstanceOf(RoleEntity.class,roleDao.update(role));
+
     }
 
     @Test
     void delete() {
         RoleDao roleDao = new RoleDaoImp();
-        assertTrue(roleDao.delete(new Long(2)));
+        assertTrue(roleDao.delete(new Long(1)));
     }
 }

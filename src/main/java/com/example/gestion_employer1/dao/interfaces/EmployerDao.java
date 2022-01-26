@@ -9,7 +9,7 @@ public interface EmployerDao {
 
     EmployerEntity add(EmployerEntity employer);
     EmployerEntity find(Long id);
-    List<EmployerEntity> getAll();
+    ArrayList<EmployerEntity> getAll();
     EmployerEntity update(EmployerEntity employer);
     boolean delete(Long id);
 }

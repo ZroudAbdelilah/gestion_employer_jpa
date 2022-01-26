@@ -21,6 +21,7 @@ public class AdminEntity extends UserEntity {
 
     public AdminEntity(String first_name, String last_name, String email, String password, RoleEntity role, Long id_user) {
         super(first_name, last_name, email, password, role);
+        super.setId_user(id_user);
         this.id_user = id_user;
     }
 
@@ -32,11 +33,12 @@ public class AdminEntity extends UserEntity {
     @Override
     public void setId_user(Long id_user) {
         this.id_user = id_user;
+        super.setId_user(id_user);
     }
 
     @Override
     public String toString() {
-        return "AdminEntity{" +
+        return super.toString()+"AdminEntity{" +
                 "id_user=" + id_user +
                 '}';
     }

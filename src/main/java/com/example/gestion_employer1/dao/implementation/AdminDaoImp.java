@@ -6,8 +6,7 @@ import com.example.gestion_employer1.utils.PersistenceManager;
 import jakarta.persistence.EntityManager;
 
 
-//import javax.persistence.EntityManager;
-import java.util.List;
+import java.util.ArrayList;
 
 public class AdminDaoImp implements AdminDao {
     EntityManager entityManager = PersistenceManager.getInstance().getEntityManager();
@@ -28,10 +27,10 @@ public class AdminDaoImp implements AdminDao {
     public AdminEntity find(Long id) {
         try {
         entityManager.getTransaction().begin();
-        AdminEntity adminEntity = new AdminEntity();
-        AdminEntity admin = entityManager.find(AdminEntity.class, adminEntity.getId_user());
+        AdminEntity admin = entityManager.find(AdminEntity.class,id);
         return admin;
         }catch (Exception e){
+            e.printStackTrace();
             return null;
         }finally {
             entityManager.close();
@@ -39,10 +38,10 @@ public class AdminDaoImp implements AdminDao {
     }
 
     @Override
-    public List<AdminEntity> getAll() {
+    public ArrayList<AdminEntity> getAll() {
         try {
         entityManager.getTransaction().begin();
-        List<AdminEntity> adminEntity = entityManager.createQuery("SELECT e FROM UserEntity e ").getResultList() ;
+        ArrayList<AdminEntity> adminEntity = new ArrayList<>(entityManager.createQuery("SELECT e FROM UserEntity e ").getResultList());
         return adminEntity;
         }catch (Exception e){
             return null;
@@ -52,13 +51,12 @@ public class AdminDaoImp implements AdminDao {
     }
     @Override
     public AdminEntity update(AdminEntity admin) {
-
+        System.out.println(admin);
         try{
             entityManager.getTransaction().begin();
             entityManager.merge(admin);
             entityManager.getTransaction().commit();
             return admin;
-
         }catch (Exception e){
             return null;
         }finally {
@@ -69,8 +67,7 @@ public class AdminDaoImp implements AdminDao {
     public boolean delete(Long id) {
         try {
             entityManager.getTransaction().begin();
-            AdminEntity adminEntity = new AdminEntity();
-            AdminEntity admin = entityManager.find(AdminEntity.class, adminEntity.getId_user());
+            AdminEntity admin = entityManager.find(AdminEntity.class, id);
             entityManager.remove(admin);
             entityManager.getTransaction().commit();
             return true;

@@ -4,7 +4,7 @@ import com.example.gestion_employer1.dao.interfaces.EmployerDao;
 import com.example.gestion_employer1.entity.EmployerEntity;
 import com.example.gestion_employer1.utils.PersistenceManager;
 import jakarta.persistence.EntityManager;
-import java.util.List;
+import java.util.ArrayList;
 
 public class EmployerDaoImp implements EmployerDao {
     EntityManager entityManager = PersistenceManager.getInstance().getEntityManager();
@@ -25,8 +25,7 @@ public class EmployerDaoImp implements EmployerDao {
     public EmployerEntity find(Long id) {
         try {
             entityManager.getTransaction().begin();
-            EmployerEntity employerEntity = new EmployerEntity();
-            EmployerEntity employer = entityManager.find(EmployerEntity.class, employerEntity.getId_user());
+            EmployerEntity employer = entityManager.find(EmployerEntity.class, id);
             return employer;
         }catch (Exception e){
             return null;
@@ -36,11 +35,11 @@ public class EmployerDaoImp implements EmployerDao {
 
     }
     @Override
-    public List<EmployerEntity> getAll() {
+    public ArrayList<EmployerEntity> getAll() {
 
         try {
             entityManager.getTransaction().begin();
-            List<EmployerEntity> employerEntity = entityManager.createQuery("SELECT e FROM UserEntity e ").getResultList() ;
+            ArrayList<EmployerEntity> employerEntity = new ArrayList<>(entityManager.createQuery("SELECT e FROM UserEntity e ").getResultList());
             return employerEntity;
         }catch (Exception e){
             return null;
@@ -66,8 +65,7 @@ public class EmployerDaoImp implements EmployerDao {
     public boolean delete(Long id) {
         try {
             entityManager.getTransaction().begin();
-            EmployerEntity employerEntity = new EmployerEntity();
-            EmployerEntity employer = entityManager.find(EmployerEntity.class, employerEntity.getId_user());
+            EmployerEntity employer = entityManager.find(EmployerEntity.class, id);
             entityManager.remove(employer);
             entityManager.getTransaction().commit();
             return true;
